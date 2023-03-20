@@ -1,18 +1,11 @@
 import { Part } from "./Part";
 
-export const Content = ({
-  part1,
-  part2,
-  part3,
-  exercise1,
-  exercise2,
-  exercise3,
-}) => {
+export const Content = ({ part1, part2, part3 }) => {
   return (
     <>
-      <Part part={part1} exercise={exercise1} />
-      <Part part={part2} exercise={exercise2} />
-      <Part part={part3} exercise={exercise3} />
+      <Part part={part1.name} exercise={part1.exercise} />
+      <Part part={part2.name} exercise={part2.exercise} />
+      <Part part={part3.name} exercise={part3.exercise} />
     </>
   );
 };
