@@ -1,7 +1,7 @@
 import React from 'react'
 
-export const Header = () => {
+export const Header = ({ course }) => {
   return (
-    <div>Header</div>
+    <div>{ course }</div>
   )
 }
