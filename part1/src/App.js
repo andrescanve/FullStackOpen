@@ -39,16 +39,22 @@ export const App = () => {
       <Button handleClick={handleBad} text={bad.text} />
 
       <h2>Statistic</h2>
-      <Statistic text={good.text} value={good.value} />
-      <Statistic text={neutral.text} value={neutral.value} />
-      <Statistic text={bad.text} value={bad.value} />
+      {good.value === 0 && neutral.value === 0 && bad.value === 0 ? (
+        "No feedback given"
+      ) : (
+        <div>
+          <Statistic text={good.text} value={good.value} />
+          <Statistic text={neutral.text} value={neutral.value} />
+          <Statistic text={bad.text} value={bad.value} />
 
-      <p>all: {good.value + neutral.value + bad.value}</p>
-      <p>average: {(good.value + neutral.value + bad.value) / 3}</p>
-      <p>
-        positive:{" "}
-        {(good.value * 100) / (good.value + neutral.value + bad.value)}
-      </p>
+          <p>all: {good.value + neutral.value + bad.value}</p>
+          <p>average: {(good.value + neutral.value + bad.value) / 3}</p>
+          <p>
+            positive:{" "}
+            {(good.value * 100) / (good.value + neutral.value + bad.value)}
+          </p>
+        </div>
+      )}
     </div>
   );
 };
