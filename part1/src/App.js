@@ -43,9 +43,15 @@ export const App = () => {
         "No feedback given"
       ) : (
         <div>
-          <Statistic text={good.text} value={good.value} />
-          <Statistic text={neutral.text} value={neutral.value} />
-          <Statistic text={bad.text} value={bad.value} />
+          <table>
+            <tbody>
+              <tr>
+                <Statistic text={good.text} value={good.value} />
+                <Statistic text={neutral.text} value={neutral.value} />
+                <Statistic text={bad.text} value={bad.value} />
+              </tr>
+            </tbody>
+          </table>
 
           <p>all: {good.value + neutral.value + bad.value}</p>
           <p>average: {(good.value + neutral.value + bad.value) / 3}</p>
