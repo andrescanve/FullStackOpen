@@ -70,6 +70,18 @@ export const App = () => {
     setAnecdotes([...anecdotes, quote]);
   };
 
+  const mostVoted = () => {
+    const anecdote = anecdotes.reduce((oldValue, actualValue) => {
+      if (actualValue.votes > oldValue.votes) {
+        return actualValue;
+      } else {
+        return oldValue;
+      }
+    }, anecdotes[0]);
+
+    return anecdote.quote;
+  };
+
   return (
     <div>
       <h1>give feedback</h1>
@@ -103,10 +115,11 @@ export const App = () => {
       <div>
         <h2>Anecdotes</h2>
         <p>{anecdotes[selected].quote}</p>
-        <p>Votes: {anecdotes[selected].votes}</p>
+        <p>Has {anecdotes[selected].votes} votes</p>
         <button onClick={handleSelected}>Random quote</button>
         <button onClick={handleVote}>vote</button>
       </div>
+      {mostVoted()}
     </div>
   );
 };
