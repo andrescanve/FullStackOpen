@@ -2,12 +2,11 @@ import React from "react";
 import { Content } from "./Content";
 import { Header } from "./Header";
 
-export const Course = ({ course }) => {
-  const { name, parts } = course;
+export const Course = ({ courses }) => {
   return (
     <div>
-      <Header title={name} />
-      <Content parts={parts} />
+      <Header />
+      <Content courses={courses} />
     </div>
   );
 };
