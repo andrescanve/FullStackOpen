@@ -7,8 +7,14 @@ function App() {
 
   const handleForm = (e) => {
     e.preventDefault();
-    setPersons([...persons, { name: newName }]);
-    setNewName("");
+    const exist = persons.some((person) => person.name === newName);
+
+    if (exist) {
+      alert(`${newName} is already added to the Notebook`);
+    } else {
+      setPersons([...persons, { name: newName }]);
+      setNewName("");
+    }
   };
 
   const handleName = (e) => {
